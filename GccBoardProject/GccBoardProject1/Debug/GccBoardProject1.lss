@@ -1,0 +1,1532 @@
+
+GccBoardProject1.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         0000077e  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         0000006c  00800060  0000077e  00000812  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000054  008000cc  008000cc  0000087e  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  0000087e  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000008b0  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 000000e0  00000000  00000000  000008ec  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   00001185  00000000  00000000  000009cc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 000007d1  00000000  00000000  00001b51  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   0000110d  00000000  00000000  00002322  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000220  00000000  00000000  00003430  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    0000ed94  00000000  00000000  00003650  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    0000071b  00000000  00000000  000123e4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 000000f0  00000000  00000000  00012aff  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 13 .debug_macro  000031d8  00000000  00000000  00012bef  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	29 c0       	rjmp	.+82     	; 0x54 <__ctors_end>
+   2:	00 00       	nop
+   4:	42 c0       	rjmp	.+132    	; 0x8a <__bad_interrupt>
+   6:	00 00       	nop
+   8:	40 c0       	rjmp	.+128    	; 0x8a <__bad_interrupt>
+   a:	00 00       	nop
+   c:	3e c0       	rjmp	.+124    	; 0x8a <__bad_interrupt>
+   e:	00 00       	nop
+  10:	3c c0       	rjmp	.+120    	; 0x8a <__bad_interrupt>
+  12:	00 00       	nop
+  14:	3a c0       	rjmp	.+116    	; 0x8a <__bad_interrupt>
+  16:	00 00       	nop
+  18:	38 c0       	rjmp	.+112    	; 0x8a <__bad_interrupt>
+  1a:	00 00       	nop
+  1c:	36 c0       	rjmp	.+108    	; 0x8a <__bad_interrupt>
+  1e:	00 00       	nop
+  20:	34 c0       	rjmp	.+104    	; 0x8a <__bad_interrupt>
+  22:	00 00       	nop
+  24:	99 c3       	rjmp	.+1842   	; 0x758 <__vector_9>
+  26:	00 00       	nop
+  28:	30 c0       	rjmp	.+96     	; 0x8a <__bad_interrupt>
+  2a:	00 00       	nop
+  2c:	2e c0       	rjmp	.+92     	; 0x8a <__bad_interrupt>
+  2e:	00 00       	nop
+  30:	2c c0       	rjmp	.+88     	; 0x8a <__bad_interrupt>
+  32:	00 00       	nop
+  34:	2a c0       	rjmp	.+84     	; 0x8a <__bad_interrupt>
+  36:	00 00       	nop
+  38:	28 c0       	rjmp	.+80     	; 0x8a <__bad_interrupt>
+  3a:	00 00       	nop
+  3c:	26 c0       	rjmp	.+76     	; 0x8a <__bad_interrupt>
+  3e:	00 00       	nop
+  40:	24 c0       	rjmp	.+72     	; 0x8a <__bad_interrupt>
+  42:	00 00       	nop
+  44:	22 c0       	rjmp	.+68     	; 0x8a <__bad_interrupt>
+  46:	00 00       	nop
+  48:	20 c0       	rjmp	.+64     	; 0x8a <__bad_interrupt>
+  4a:	00 00       	nop
+  4c:	1e c0       	rjmp	.+60     	; 0x8a <__bad_interrupt>
+  4e:	00 00       	nop
+  50:	1c c0       	rjmp	.+56     	; 0x8a <__bad_interrupt>
+	...
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d8 e0       	ldi	r29, 0x08	; 8
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+
+00000060 <__do_copy_data>:
+  60:	10 e0       	ldi	r17, 0x00	; 0
+  62:	a0 e6       	ldi	r26, 0x60	; 96
+  64:	b0 e0       	ldi	r27, 0x00	; 0
+  66:	ee e7       	ldi	r30, 0x7E	; 126
+  68:	f7 e0       	ldi	r31, 0x07	; 7
+  6a:	02 c0       	rjmp	.+4      	; 0x70 <__do_copy_data+0x10>
+  6c:	05 90       	lpm	r0, Z+
+  6e:	0d 92       	st	X+, r0
+  70:	ac 3c       	cpi	r26, 0xCC	; 204
+  72:	b1 07       	cpc	r27, r17
+  74:	d9 f7       	brne	.-10     	; 0x6c <__do_copy_data+0xc>
+
+00000076 <__do_clear_bss>:
+  76:	21 e0       	ldi	r18, 0x01	; 1
+  78:	ac ec       	ldi	r26, 0xCC	; 204
+  7a:	b0 e0       	ldi	r27, 0x00	; 0
+  7c:	01 c0       	rjmp	.+2      	; 0x80 <.do_clear_bss_start>
+
+0000007e <.do_clear_bss_loop>:
+  7e:	1d 92       	st	X+, r1
+
+00000080 <.do_clear_bss_start>:
+  80:	a0 32       	cpi	r26, 0x20	; 32
+  82:	b2 07       	cpc	r27, r18
+  84:	e1 f7       	brne	.-8      	; 0x7e <.do_clear_bss_loop>
+  86:	32 d3       	rcall	.+1636   	; 0x6ec <main>
+  88:	78 c3       	rjmp	.+1776   	; 0x77a <_exit>
+
+0000008a <__bad_interrupt>:
+  8a:	ba cf       	rjmp	.-140    	; 0x0 <__vectors>
+
+0000008c <board_init>:
+#include <asf.h>
+#include <board.h>
+#include <conf_board.h>
+
+void board_init(void)
+{
+  8c:	08 95       	ret
+
+0000008e <delay_us>:
+unsigned char storage[Row_Size][Max_Number_Of_Rows];
+
+//A function for a delay in the range of microseconds
+void delay_us(int d)
+{
+	for(int i=1; i<=d; i++){
+  8e:	18 16       	cp	r1, r24
+  90:	19 06       	cpc	r1, r25
+  92:	44 f4       	brge	.+16     	; 0xa4 <delay_us+0x16>
+  94:	21 e0       	ldi	r18, 0x01	; 1
+  96:	30 e0       	ldi	r19, 0x00	; 0
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  98:	00 00       	nop
+  9a:	2f 5f       	subi	r18, 0xFF	; 255
+  9c:	3f 4f       	sbci	r19, 0xFF	; 255
+  9e:	82 17       	cp	r24, r18
+  a0:	93 07       	cpc	r25, r19
+  a2:	d4 f7       	brge	.-12     	; 0x98 <delay_us+0xa>
+  a4:	08 95       	ret
+
+000000a6 <delay_ms>:
+}
+
+//A function for a delay in the range of nanoseconds
+void delay_ms(int d)
+{
+	for(int i=1; i<=d; i++){
+  a6:	18 16       	cp	r1, r24
+  a8:	19 06       	cpc	r1, r25
+  aa:	6c f4       	brge	.+26     	; 0xc6 <delay_ms+0x20>
+  ac:	21 e0       	ldi	r18, 0x01	; 1
+  ae:	30 e0       	ldi	r19, 0x00	; 0
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  b0:	e9 ef       	ldi	r30, 0xF9	; 249
+  b2:	f0 e0       	ldi	r31, 0x00	; 0
+  b4:	31 97       	sbiw	r30, 0x01	; 1
+  b6:	f1 f7       	brne	.-4      	; 0xb4 <delay_ms+0xe>
+  b8:	00 c0       	rjmp	.+0      	; 0xba <delay_ms+0x14>
+  ba:	00 00       	nop
+  bc:	2f 5f       	subi	r18, 0xFF	; 255
+  be:	3f 4f       	sbci	r19, 0xFF	; 255
+  c0:	82 17       	cp	r24, r18
+  c2:	93 07       	cpc	r25, r19
+  c4:	ac f7       	brge	.-22     	; 0xb0 <delay_ms+0xa>
+  c6:	08 95       	ret
+
+000000c8 <lcdCommand>:
+	}
+}
+
+//A function for sending a command to the LCD. (written according to LCD timing diagrams)
+void lcdCommand( unsigned char cmnd)
+{
+  c8:	cf 93       	push	r28
+  ca:	c8 2f       	mov	r28, r24
+
+	LCD_PRT = (LCD_PRT & 0x0F) | (cmnd & 0xF0);
+  cc:	8b b3       	in	r24, 0x1b	; 27
+  ce:	8f 70       	andi	r24, 0x0F	; 15
+  d0:	9c 2f       	mov	r25, r28
+  d2:	90 7f       	andi	r25, 0xF0	; 240
+  d4:	89 2b       	or	r24, r25
+  d6:	8b bb       	out	0x1b, r24	; 27
+	LCD_PRT &= ~ (1<<LCD_RS);
+  d8:	d8 98       	cbi	0x1b, 0	; 27
+	LCD_PRT &= ~ (1<<LCD_RW);
+  da:	d9 98       	cbi	0x1b, 1	; 27
+	LCD_PRT |= (1<<LCD_EN);
+  dc:	da 9a       	sbi	0x1b, 2	; 27
+	
+	delay_us(1);
+  de:	81 e0       	ldi	r24, 0x01	; 1
+  e0:	90 e0       	ldi	r25, 0x00	; 0
+  e2:	d5 df       	rcall	.-86     	; 0x8e <delay_us>
+	
+	LCD_PRT &= ~ (1<<LCD_EN);
+  e4:	da 98       	cbi	0x1b, 2	; 27
+	
+	delay_us(20);
+  e6:	84 e1       	ldi	r24, 0x14	; 20
+  e8:	90 e0       	ldi	r25, 0x00	; 0
+  ea:	d1 df       	rcall	.-94     	; 0x8e <delay_us>
+	
+	LCD_PRT = (LCD_PRT & 0x0F) | (cmnd << 4);
+  ec:	8b b3       	in	r24, 0x1b	; 27
+  ee:	28 2f       	mov	r18, r24
+  f0:	2f 70       	andi	r18, 0x0F	; 15
+  f2:	30 e1       	ldi	r19, 0x10	; 16
+  f4:	c3 9f       	mul	r28, r19
+  f6:	c0 01       	movw	r24, r0
+  f8:	11 24       	eor	r1, r1
+  fa:	82 2b       	or	r24, r18
+  fc:	8b bb       	out	0x1b, r24	; 27
+	LCD_PRT |= (1<<LCD_EN);
+  fe:	da 9a       	sbi	0x1b, 2	; 27
+	
+	delay_us(1);
+ 100:	81 e0       	ldi	r24, 0x01	; 1
+ 102:	90 e0       	ldi	r25, 0x00	; 0
+ 104:	c4 df       	rcall	.-120    	; 0x8e <delay_us>
+	
+	LCD_PRT &= ~ (1<<LCD_EN);
+	
+	delay_us(100);
+ 106:	da 98       	cbi	0x1b, 2	; 27
+ 108:	84 e6       	ldi	r24, 0x64	; 100
+ 10a:	90 e0       	ldi	r25, 0x00	; 0
+ 10c:	c0 df       	rcall	.-128    	; 0x8e <delay_us>
+
+}
+ 10e:	cf 91       	pop	r28
+ 110:	08 95       	ret
+
+00000112 <lcdData>:
+
+//A function for sending data to the LCD
+void lcdData( unsigned char data)
+{
+ 112:	cf 93       	push	r28
+ 114:	c8 2f       	mov	r28, r24
+	LCD_PRT = (LCD_PRT & 0x0F) | (data & 0xF0);
+ 116:	8b b3       	in	r24, 0x1b	; 27
+ 118:	8f 70       	andi	r24, 0x0F	; 15
+ 11a:	9c 2f       	mov	r25, r28
+ 11c:	90 7f       	andi	r25, 0xF0	; 240
+ 11e:	89 2b       	or	r24, r25
+ 120:	8b bb       	out	0x1b, r24	; 27
+	LCD_PRT |= (1<<LCD_RS);
+ 122:	d8 9a       	sbi	0x1b, 0	; 27
+	LCD_PRT &= ~ (1<<LCD_RW);
+ 124:	d9 98       	cbi	0x1b, 1	; 27
+	LCD_PRT |= (1<<LCD_EN);
+ 126:	da 9a       	sbi	0x1b, 2	; 27
+	
+	delay_us(1);
+ 128:	81 e0       	ldi	r24, 0x01	; 1
+ 12a:	90 e0       	ldi	r25, 0x00	; 0
+ 12c:	b0 df       	rcall	.-160    	; 0x8e <delay_us>
+	
+	LCD_PRT &= ~ (1<<LCD_EN);
+ 12e:	da 98       	cbi	0x1b, 2	; 27
+	
+	delay_us(20);
+ 130:	84 e1       	ldi	r24, 0x14	; 20
+ 132:	90 e0       	ldi	r25, 0x00	; 0
+ 134:	ac df       	rcall	.-168    	; 0x8e <delay_us>
+	
+	LCD_PRT = (LCD_PRT & 0x0F) | (data << 4);
+ 136:	8b b3       	in	r24, 0x1b	; 27
+ 138:	28 2f       	mov	r18, r24
+ 13a:	2f 70       	andi	r18, 0x0F	; 15
+ 13c:	30 e1       	ldi	r19, 0x10	; 16
+ 13e:	c3 9f       	mul	r28, r19
+ 140:	c0 01       	movw	r24, r0
+ 142:	11 24       	eor	r1, r1
+ 144:	82 2b       	or	r24, r18
+ 146:	8b bb       	out	0x1b, r24	; 27
+	LCD_PRT |= (1<<LCD_EN);
+ 148:	da 9a       	sbi	0x1b, 2	; 27
+	
+	delay_us(1);
+ 14a:	81 e0       	ldi	r24, 0x01	; 1
+ 14c:	90 e0       	ldi	r25, 0x00	; 0
+ 14e:	9f df       	rcall	.-194    	; 0x8e <delay_us>
+	
+	LCD_PRT &= ~ (1<<LCD_EN);
+ 150:	da 98       	cbi	0x1b, 2	; 27
+}
+ 152:	cf 91       	pop	r28
+ 154:	08 95       	ret
+
+00000156 <lcd_init>:
+
+//A function for initializing the LCD before using it.
+void lcd_init()
+{
+	LCD_DDR = 0xFF;
+ 156:	8f ef       	ldi	r24, 0xFF	; 255
+ 158:	8a bb       	out	0x1a, r24	; 26
+	LCD_PRT &=~(1<<LCD_EN);
+ 15a:	da 98       	cbi	0x1b, 2	; 27
+	
+	delay_us(2000);
+ 15c:	80 ed       	ldi	r24, 0xD0	; 208
+ 15e:	97 e0       	ldi	r25, 0x07	; 7
+ 160:	96 df       	rcall	.-212    	; 0x8e <delay_us>
+	
+	lcdCommand(0x33);	//<
+ 162:	83 e3       	ldi	r24, 0x33	; 51
+ 164:	b1 df       	rcall	.-158    	; 0xc8 <lcdCommand>
+	lcdCommand(0x32);	//for 4-bit LCD mode (saving up the MC I/O pins).
+ 166:	82 e3       	ldi	r24, 0x32	; 50
+ 168:	af df       	rcall	.-162    	; 0xc8 <lcdCommand>
+	lcdCommand(0x28);	//>
+ 16a:	88 e2       	ldi	r24, 0x28	; 40
+ 16c:	ad df       	rcall	.-166    	; 0xc8 <lcdCommand>
+	lcdCommand(0x0E);	//display ON, cursor ON
+ 16e:	8e e0       	ldi	r24, 0x0E	; 14
+ 170:	ab df       	rcall	.-170    	; 0xc8 <lcdCommand>
+	lcdCommand(0x01);	//clear LCD
+ 172:	81 e0       	ldi	r24, 0x01	; 1
+ 174:	a9 df       	rcall	.-174    	; 0xc8 <lcdCommand>
+	
+	delay_us(2000);
+ 176:	80 ed       	ldi	r24, 0xD0	; 208
+ 178:	97 e0       	ldi	r25, 0x07	; 7
+ 17a:	89 df       	rcall	.-238    	; 0x8e <delay_us>
+ 17c:	86 e0       	ldi	r24, 0x06	; 6
+	
+	lcdCommand(0x06);	//shift cursor right (to make it start at the beginning of the first row).
+ 17e:	a4 cf       	rjmp	.-184    	; 0xc8 <lcdCommand>
+ 180:	08 95       	ret
+
+00000182 <lcd_gotoxy>:
+ 182:	cf 93       	push	r28
+ 184:	df 93       	push	r29
+}
+
+//A function for going to a certain location within the LCD display.
+void lcd_gotoxy (unsigned char x, unsigned char y)
+{
+ 186:	00 d0       	rcall	.+0      	; 0x188 <lcd_gotoxy+0x6>
+ 188:	00 d0       	rcall	.+0      	; 0x18a <lcd_gotoxy+0x8>
+ 18a:	cd b7       	in	r28, 0x3d	; 61
+ 18c:	de b7       	in	r29, 0x3e	; 62
+	unsigned char firstCharAdr[] = {0x80, 0xC0, 0x94, 0xD4};	//must be according to the LCD type.
+ 18e:	90 e8       	ldi	r25, 0x80	; 128
+ 190:	99 83       	std	Y+1, r25	; 0x01
+ 192:	90 ec       	ldi	r25, 0xC0	; 192
+ 194:	9a 83       	std	Y+2, r25	; 0x02
+ 196:	94 e9       	ldi	r25, 0x94	; 148
+ 198:	9b 83       	std	Y+3, r25	; 0x03
+ 19a:	94 ed       	ldi	r25, 0xD4	; 212
+ 19c:	9c 83       	std	Y+4, r25	; 0x04
+		
+	lcdCommand(firstCharAdr[y-1] + x - 1);
+ 19e:	fe 01       	movw	r30, r28
+ 1a0:	e6 0f       	add	r30, r22
+ 1a2:	f1 1d       	adc	r31, r1
+ 1a4:	81 50       	subi	r24, 0x01	; 1
+ 1a6:	90 81       	ld	r25, Z
+ 1a8:	89 0f       	add	r24, r25
+ 1aa:	8e df       	rcall	.-228    	; 0xc8 <lcdCommand>
+}
+ 1ac:	0f 90       	pop	r0
+ 1ae:	0f 90       	pop	r0
+ 1b0:	0f 90       	pop	r0
+ 1b2:	0f 90       	pop	r0
+ 1b4:	df 91       	pop	r29
+ 1b6:	cf 91       	pop	r28
+ 1b8:	08 95       	ret
+
+000001ba <keypad_init>:
+
+//A function for initializing the keypad. (setting its port as half input half output).
+void keypad_init()
+{
+	KEY_DDR = 0xF0;
+ 1ba:	80 ef       	ldi	r24, 0xF0	; 240
+ 1bc:	84 bb       	out	0x14, r24	; 20
+	KEY_PRT = 0xFF;
+ 1be:	8f ef       	ldi	r24, 0xFF	; 255
+ 1c0:	85 bb       	out	0x15, r24	; 21
+ 1c2:	08 95       	ret
+
+000001c4 <getKey>:
+{
+	while(1)
+	{
+		do 
+		{
+			KEY_PRT &= 0x0F;
+ 1c4:	85 b3       	in	r24, 0x15	; 21
+ 1c6:	8f 70       	andi	r24, 0x0F	; 15
+ 1c8:	85 bb       	out	0x15, r24	; 21
+			colloc = (KEY_PIN & 0x0F);
+ 1ca:	83 b3       	in	r24, 0x13	; 19
+ 1cc:	8f 70       	andi	r24, 0x0F	; 15
+ 1ce:	80 93 1e 01 	sts	0x011E, r24	; 0x80011e <colloc>
+		} while (colloc != 0x0F);
+ 1d2:	8f 30       	cpi	r24, 0x0F	; 15
+ 1d4:	b9 f7       	brne	.-18     	; 0x1c4 <getKey>
+		do
+		{
+			do{
+				delay_ms(20);
+ 1d6:	84 e1       	ldi	r24, 0x14	; 20
+ 1d8:	90 e0       	ldi	r25, 0x00	; 0
+ 1da:	65 df       	rcall	.-310    	; 0xa6 <delay_ms>
+				
+				colloc = (KEY_PIN & 0x0F);
+ 1dc:	83 b3       	in	r24, 0x13	; 19
+ 1de:	8f 70       	andi	r24, 0x0F	; 15
+ 1e0:	80 93 1e 01 	sts	0x011E, r24	; 0x80011e <colloc>
+			}while(colloc == 0x0F);
+ 1e4:	8f 30       	cpi	r24, 0x0F	; 15
+ 1e6:	b9 f3       	breq	.-18     	; 0x1d6 <getKey+0x12>
+
+			delay_ms(20);
+ 1e8:	84 e1       	ldi	r24, 0x14	; 20
+ 1ea:	90 e0       	ldi	r25, 0x00	; 0
+ 1ec:	5c df       	rcall	.-328    	; 0xa6 <delay_ms>
+			
+			colloc = (KEY_PIN & 0x0F);
+ 1ee:	83 b3       	in	r24, 0x13	; 19
+ 1f0:	8f 70       	andi	r24, 0x0F	; 15
+ 1f2:	80 93 1e 01 	sts	0x011E, r24	; 0x80011e <colloc>
+		}while (colloc == 0x0F);
+ 1f6:	8f 30       	cpi	r24, 0x0F	; 15
+ 1f8:	71 f3       	breq	.-36     	; 0x1d6 <getKey+0x12>
+		while(1)
+		{
+			KEY_PRT = 0xEF;
+ 1fa:	8f ee       	ldi	r24, 0xEF	; 239
+ 1fc:	85 bb       	out	0x15, r24	; 21
+			colloc = (KEY_PIN & 0x0F);
+ 1fe:	83 b3       	in	r24, 0x13	; 19
+ 200:	8f 70       	andi	r24, 0x0F	; 15
+ 202:	80 93 1e 01 	sts	0x011E, r24	; 0x80011e <colloc>
+			if(colloc != 0x0F)
+ 206:	8f 30       	cpi	r24, 0x0F	; 15
+ 208:	19 f0       	breq	.+6      	; 0x210 <getKey+0x4c>
+			{
+				rowloc = 0;
+ 20a:	10 92 1f 01 	sts	0x011F, r1	; 0x80011f <rowloc>
+				break;
+ 20e:	21 c0       	rjmp	.+66     	; 0x252 <getKey+0x8e>
+			}
+
+			KEY_PRT = 0xDF;
+ 210:	8f ed       	ldi	r24, 0xDF	; 223
+ 212:	85 bb       	out	0x15, r24	; 21
+			colloc = (KEY_PIN & 0x0F);
+ 214:	83 b3       	in	r24, 0x13	; 19
+ 216:	8f 70       	andi	r24, 0x0F	; 15
+ 218:	80 93 1e 01 	sts	0x011E, r24	; 0x80011e <colloc>
+			
+			if(colloc != 0x0F)
+ 21c:	8f 30       	cpi	r24, 0x0F	; 15
+ 21e:	21 f0       	breq	.+8      	; 0x228 <getKey+0x64>
+			{
+				rowloc = 1;
+ 220:	81 e0       	ldi	r24, 0x01	; 1
+ 222:	80 93 1f 01 	sts	0x011F, r24	; 0x80011f <rowloc>
+				break;
+ 226:	15 c0       	rjmp	.+42     	; 0x252 <getKey+0x8e>
+			}
+
+			KEY_PRT = 0xBF;
+ 228:	8f eb       	ldi	r24, 0xBF	; 191
+ 22a:	85 bb       	out	0x15, r24	; 21
+			colloc = (KEY_PIN & 0x0F);
+ 22c:	83 b3       	in	r24, 0x13	; 19
+ 22e:	8f 70       	andi	r24, 0x0F	; 15
+ 230:	80 93 1e 01 	sts	0x011E, r24	; 0x80011e <colloc>
+
+			if(colloc != 0x0F)
+ 234:	8f 30       	cpi	r24, 0x0F	; 15
+ 236:	21 f0       	breq	.+8      	; 0x240 <getKey+0x7c>
+			{
+				rowloc = 2;
+ 238:	82 e0       	ldi	r24, 0x02	; 2
+ 23a:	80 93 1f 01 	sts	0x011F, r24	; 0x80011f <rowloc>
+				break;
+ 23e:	09 c0       	rjmp	.+18     	; 0x252 <getKey+0x8e>
+			}
+
+			KEY_PRT = 0x7F;
+ 240:	8f e7       	ldi	r24, 0x7F	; 127
+ 242:	85 bb       	out	0x15, r24	; 21
+			colloc = (KEY_PIN & 0x0F);
+ 244:	83 b3       	in	r24, 0x13	; 19
+ 246:	8f 70       	andi	r24, 0x0F	; 15
+ 248:	80 93 1e 01 	sts	0x011E, r24	; 0x80011e <colloc>
+			rowloc = 3;
+ 24c:	83 e0       	ldi	r24, 0x03	; 3
+ 24e:	80 93 1f 01 	sts	0x011F, r24	; 0x80011f <rowloc>
+			break;
+
+		}
+		if(colloc == 0x0E)
+ 252:	80 91 1e 01 	lds	r24, 0x011E	; 0x80011e <colloc>
+ 256:	8e 30       	cpi	r24, 0x0E	; 14
+ 258:	59 f4       	brne	.+22     	; 0x270 <getKey+0xac>
+			return (keypad[rowloc][0]);
+ 25a:	e0 91 1f 01 	lds	r30, 0x011F	; 0x80011f <rowloc>
+ 25e:	f0 e0       	ldi	r31, 0x00	; 0
+ 260:	ee 0f       	add	r30, r30
+ 262:	ff 1f       	adc	r31, r31
+ 264:	ee 0f       	add	r30, r30
+ 266:	ff 1f       	adc	r31, r31
+ 268:	e6 54       	subi	r30, 0x46	; 70
+ 26a:	ff 4f       	sbci	r31, 0xFF	; 255
+ 26c:	80 81       	ld	r24, Z
+ 26e:	08 95       	ret
+		else if(colloc == 0x0D)
+ 270:	8d 30       	cpi	r24, 0x0D	; 13
+ 272:	59 f4       	brne	.+22     	; 0x28a <getKey+0xc6>
+			return (keypad[rowloc][1]);
+ 274:	e0 91 1f 01 	lds	r30, 0x011F	; 0x80011f <rowloc>
+ 278:	f0 e0       	ldi	r31, 0x00	; 0
+ 27a:	ee 0f       	add	r30, r30
+ 27c:	ff 1f       	adc	r31, r31
+ 27e:	ee 0f       	add	r30, r30
+ 280:	ff 1f       	adc	r31, r31
+ 282:	e6 54       	subi	r30, 0x46	; 70
+ 284:	ff 4f       	sbci	r31, 0xFF	; 255
+ 286:	81 81       	ldd	r24, Z+1	; 0x01
+ 288:	08 95       	ret
+		else if(colloc == 0x0B)
+ 28a:	8b 30       	cpi	r24, 0x0B	; 11
+ 28c:	59 f4       	brne	.+22     	; 0x2a4 <getKey+0xe0>
+			return (keypad[rowloc][2]);
+ 28e:	e0 91 1f 01 	lds	r30, 0x011F	; 0x80011f <rowloc>
+ 292:	f0 e0       	ldi	r31, 0x00	; 0
+ 294:	ee 0f       	add	r30, r30
+ 296:	ff 1f       	adc	r31, r31
+ 298:	ee 0f       	add	r30, r30
+ 29a:	ff 1f       	adc	r31, r31
+ 29c:	e6 54       	subi	r30, 0x46	; 70
+ 29e:	ff 4f       	sbci	r31, 0xFF	; 255
+ 2a0:	82 81       	ldd	r24, Z+2	; 0x02
+ 2a2:	08 95       	ret
+		else
+			return (keypad[rowloc][3]);
+ 2a4:	e0 91 1f 01 	lds	r30, 0x011F	; 0x80011f <rowloc>
+ 2a8:	f0 e0       	ldi	r31, 0x00	; 0
+ 2aa:	ee 0f       	add	r30, r30
+ 2ac:	ff 1f       	adc	r31, r31
+ 2ae:	ee 0f       	add	r30, r30
+ 2b0:	ff 1f       	adc	r31, r31
+ 2b2:	e6 54       	subi	r30, 0x46	; 70
+ 2b4:	ff 4f       	sbci	r31, 0xFF	; 255
+ 2b6:	83 81       	ldd	r24, Z+3	; 0x03
+	}
+		
+}
+ 2b8:	08 95       	ret
+
+000002ba <restartTimer>:
+
+//A function for restarting the timer (Timer1).
+void restartTimer (void)
+{
+	B1 = 0;
+ 2ba:	10 92 cd 00 	sts	0x00CD, r1	; 0x8000cd <B1>
+
+	TCNT1 = 0xD17B;			//about 300ms.
+ 2be:	8b e7       	ldi	r24, 0x7B	; 123
+ 2c0:	91 ed       	ldi	r25, 0xD1	; 209
+ 2c2:	9d bd       	out	0x2d, r25	; 45
+ 2c4:	8c bd       	out	0x2c, r24	; 44
+	
+	TCCR1A = 0x00;
+ 2c6:	1f bc       	out	0x2f, r1	; 47
+	TCCR1B = 0x03;			//normal mode, pre-scaler = 64
+ 2c8:	83 e0       	ldi	r24, 0x03	; 3
+ 2ca:	8e bd       	out	0x2e, r24	; 46
+ 2cc:	08 95       	ret
+
+000002ce <saveChar>:
+A function for storing a character in the allocated storage area (storage[][]), the character value is stored in 
+a location in the array that is the same as its location in the text (by using the value of j).
+*/
+void saveChar(unsigned char c)
+{
+		 if(j>64) storage[j-64-1][5]=c;
+ 2ce:	20 91 cb 00 	lds	r18, 0x00CB	; 0x8000cb <j>
+ 2d2:	21 34       	cpi	r18, 0x41	; 65
+ 2d4:	78 f0       	brcs	.+30     	; 0x2f4 <saveChar+0x26>
+ 2d6:	30 e0       	ldi	r19, 0x00	; 0
+ 2d8:	20 54       	subi	r18, 0x40	; 64
+ 2da:	31 09       	sbc	r19, r1
+ 2dc:	f9 01       	movw	r30, r18
+ 2de:	ee 0f       	add	r30, r30
+ 2e0:	ff 1f       	adc	r31, r31
+ 2e2:	ee 0f       	add	r30, r30
+ 2e4:	ff 1f       	adc	r31, r31
+ 2e6:	2e 0f       	add	r18, r30
+ 2e8:	3f 1f       	adc	r19, r31
+ 2ea:	f9 01       	movw	r30, r18
+ 2ec:	e2 53       	subi	r30, 0x32	; 50
+ 2ee:	ff 4f       	sbci	r31, 0xFF	; 255
+ 2f0:	80 83       	st	Z, r24
+ 2f2:	08 95       	ret
+	else if(j>48) storage[j-48-1][4]=c;
+ 2f4:	21 33       	cpi	r18, 0x31	; 49
+ 2f6:	78 f0       	brcs	.+30     	; 0x316 <saveChar+0x48>
+ 2f8:	30 e0       	ldi	r19, 0x00	; 0
+ 2fa:	21 53       	subi	r18, 0x31	; 49
+ 2fc:	31 09       	sbc	r19, r1
+ 2fe:	f9 01       	movw	r30, r18
+ 300:	ee 0f       	add	r30, r30
+ 302:	ff 1f       	adc	r31, r31
+ 304:	ee 0f       	add	r30, r30
+ 306:	ff 1f       	adc	r31, r31
+ 308:	2e 0f       	add	r18, r30
+ 30a:	3f 1f       	adc	r19, r31
+ 30c:	f9 01       	movw	r30, r18
+ 30e:	e2 53       	subi	r30, 0x32	; 50
+ 310:	ff 4f       	sbci	r31, 0xFF	; 255
+ 312:	84 83       	std	Z+4, r24	; 0x04
+ 314:	08 95       	ret
+	else if(j>32) storage[j-32-1][3]=c;
+ 316:	21 32       	cpi	r18, 0x21	; 33
+ 318:	78 f0       	brcs	.+30     	; 0x338 <saveChar+0x6a>
+ 31a:	30 e0       	ldi	r19, 0x00	; 0
+ 31c:	21 52       	subi	r18, 0x21	; 33
+ 31e:	31 09       	sbc	r19, r1
+ 320:	f9 01       	movw	r30, r18
+ 322:	ee 0f       	add	r30, r30
+ 324:	ff 1f       	adc	r31, r31
+ 326:	ee 0f       	add	r30, r30
+ 328:	ff 1f       	adc	r31, r31
+ 32a:	2e 0f       	add	r18, r30
+ 32c:	3f 1f       	adc	r19, r31
+ 32e:	f9 01       	movw	r30, r18
+ 330:	e2 53       	subi	r30, 0x32	; 50
+ 332:	ff 4f       	sbci	r31, 0xFF	; 255
+ 334:	83 83       	std	Z+3, r24	; 0x03
+ 336:	08 95       	ret
+	else if(j>16) storage[j-16-1][2]=c;
+ 338:	21 31       	cpi	r18, 0x11	; 17
+ 33a:	78 f0       	brcs	.+30     	; 0x35a <saveChar+0x8c>
+ 33c:	30 e0       	ldi	r19, 0x00	; 0
+ 33e:	21 51       	subi	r18, 0x11	; 17
+ 340:	31 09       	sbc	r19, r1
+ 342:	f9 01       	movw	r30, r18
+ 344:	ee 0f       	add	r30, r30
+ 346:	ff 1f       	adc	r31, r31
+ 348:	ee 0f       	add	r30, r30
+ 34a:	ff 1f       	adc	r31, r31
+ 34c:	2e 0f       	add	r18, r30
+ 34e:	3f 1f       	adc	r19, r31
+ 350:	f9 01       	movw	r30, r18
+ 352:	e2 53       	subi	r30, 0x32	; 50
+ 354:	ff 4f       	sbci	r31, 0xFF	; 255
+ 356:	82 83       	std	Z+2, r24	; 0x02
+ 358:	08 95       	ret
+	else		  storage[j-1][1]   =c;
+ 35a:	30 e0       	ldi	r19, 0x00	; 0
+ 35c:	21 50       	subi	r18, 0x01	; 1
+ 35e:	31 09       	sbc	r19, r1
+ 360:	f9 01       	movw	r30, r18
+ 362:	ee 0f       	add	r30, r30
+ 364:	ff 1f       	adc	r31, r31
+ 366:	ee 0f       	add	r30, r30
+ 368:	ff 1f       	adc	r31, r31
+ 36a:	2e 0f       	add	r18, r30
+ 36c:	3f 1f       	adc	r19, r31
+ 36e:	f9 01       	movw	r30, r18
+ 370:	e2 53       	subi	r30, 0x32	; 50
+ 372:	ff 4f       	sbci	r31, 0xFF	; 255
+ 374:	81 83       	std	Z+1, r24	; 0x01
+ 376:	08 95       	ret
+
+00000378 <scrollDown>:
+A function for scrolling down while the user is entering the text, it puts the current row in the upper row of 
+the display and puts the cursor at the start of the second row on the display.
+*/
+//This function cannot be used for an LCD other than the 2*16 type.
+void scrollDown(unsigned char line2)
+{
+ 378:	0f 93       	push	r16
+ 37a:	1f 93       	push	r17
+ 37c:	cf 93       	push	r28
+ 37e:	08 2f       	mov	r16, r24
+ 380:	10 e0       	ldi	r17, 0x00	; 0
+ 382:	03 53       	subi	r16, 0x33	; 51
+ 384:	1f 4f       	sbci	r17, 0xFF	; 255
+	unsigned char i;
+	for(i=0;i<=15;i++){
+ 386:	c0 e0       	ldi	r28, 0x00	; 0
+		lcd_gotoxy(i+1,1);
+ 388:	cf 5f       	subi	r28, 0xFF	; 255
+ 38a:	61 e0       	ldi	r22, 0x01	; 1
+ 38c:	8c 2f       	mov	r24, r28
+ 38e:	f9 de       	rcall	.-526    	; 0x182 <lcd_gotoxy>
+		lcdData(storage[i][line2-1]);
+ 390:	f8 01       	movw	r30, r16
+ 392:	80 81       	ld	r24, Z
+ 394:	be de       	rcall	.-644    	; 0x112 <lcdData>
+		lcd_gotoxy(i+1,2);
+ 396:	62 e0       	ldi	r22, 0x02	; 2
+ 398:	8c 2f       	mov	r24, r28
+		lcdData(0);
+ 39a:	f3 de       	rcall	.-538    	; 0x182 <lcd_gotoxy>
+ 39c:	80 e0       	ldi	r24, 0x00	; 0
+ 39e:	b9 de       	rcall	.-654    	; 0x112 <lcdData>
+ 3a0:	0b 5f       	subi	r16, 0xFB	; 251
+ 3a2:	1f 4f       	sbci	r17, 0xFF	; 255
+*/
+//This function cannot be used for an LCD other than the 2*16 type.
+void scrollDown(unsigned char line2)
+{
+	unsigned char i;
+	for(i=0;i<=15;i++){
+ 3a4:	c0 31       	cpi	r28, 0x10	; 16
+		lcd_gotoxy(i+1,1);
+		lcdData(storage[i][line2-1]);
+		lcd_gotoxy(i+1,2);
+		lcdData(0);
+	} lcd_gotoxy(1,2);
+ 3a6:	81 f7       	brne	.-32     	; 0x388 <scrollDown+0x10>
+ 3a8:	62 e0       	ldi	r22, 0x02	; 2
+ 3aa:	81 e0       	ldi	r24, 0x01	; 1
+ 3ac:	ea de       	rcall	.-556    	; 0x182 <lcd_gotoxy>
+}
+ 3ae:	cf 91       	pop	r28
+ 3b0:	1f 91       	pop	r17
+ 3b2:	0f 91       	pop	r16
+ 3b4:	08 95       	ret
+
+000003b6 <scrollDown2>:
+/*
+A function for scrolling down after pressing the scroll down button, its difference from the above is that it
+puts the current row in the bottom row of the display, and the row before it on the upper row of the display.
+*/
+void scrollDown2(unsigned char line2)
+{
+ 3b6:	0f 93       	push	r16
+ 3b8:	1f 93       	push	r17
+ 3ba:	cf 93       	push	r28
+ 3bc:	08 2f       	mov	r16, r24
+ 3be:	10 e0       	ldi	r17, 0x00	; 0
+ 3c0:	03 53       	subi	r16, 0x33	; 51
+ 3c2:	1f 4f       	sbci	r17, 0xFF	; 255
+	unsigned char i;
+	for(i=0;i<=15;i++){
+ 3c4:	c0 e0       	ldi	r28, 0x00	; 0
+		lcd_gotoxy(i+1,1);
+ 3c6:	cf 5f       	subi	r28, 0xFF	; 255
+ 3c8:	61 e0       	ldi	r22, 0x01	; 1
+ 3ca:	8c 2f       	mov	r24, r28
+ 3cc:	da de       	rcall	.-588    	; 0x182 <lcd_gotoxy>
+		lcdData(storage[i][line2-1]);
+ 3ce:	f8 01       	movw	r30, r16
+ 3d0:	80 81       	ld	r24, Z
+ 3d2:	9f de       	rcall	.-706    	; 0x112 <lcdData>
+		lcd_gotoxy(i+1,2);
+ 3d4:	62 e0       	ldi	r22, 0x02	; 2
+ 3d6:	8c 2f       	mov	r24, r28
+ 3d8:	d4 de       	rcall	.-600    	; 0x182 <lcd_gotoxy>
+		lcdData(storage[i][line2]);
+ 3da:	f8 01       	movw	r30, r16
+ 3dc:	81 81       	ldd	r24, Z+1	; 0x01
+ 3de:	99 de       	rcall	.-718    	; 0x112 <lcdData>
+ 3e0:	0b 5f       	subi	r16, 0xFB	; 251
+ 3e2:	1f 4f       	sbci	r17, 0xFF	; 255
+ 3e4:	c0 31       	cpi	r28, 0x10	; 16
+puts the current row in the bottom row of the display, and the row before it on the upper row of the display.
+*/
+void scrollDown2(unsigned char line2)
+{
+	unsigned char i;
+	for(i=0;i<=15;i++){
+ 3e6:	79 f7       	brne	.-34     	; 0x3c6 <scrollDown2+0x10>
+		lcd_gotoxy(i+1,1);
+		lcdData(storage[i][line2-1]);
+		lcd_gotoxy(i+1,2);
+		lcdData(storage[i][line2]);
+	} lcd_gotoxy(16,2);
+ 3e8:	62 e0       	ldi	r22, 0x02	; 2
+ 3ea:	80 e1       	ldi	r24, 0x10	; 16
+ 3ec:	ca de       	rcall	.-620    	; 0x182 <lcd_gotoxy>
+ 3ee:	cf 91       	pop	r28
+}
+ 3f0:	1f 91       	pop	r17
+ 3f2:	0f 91       	pop	r16
+ 3f4:	08 95       	ret
+
+000003f6 <scrollUp>:
+ 3f6:	0f 93       	push	r16
+he/she pressed the backspace while in the beginning of a row, it puts the current row in the bottom row of 
+the display and the previous one on the top row of the display.
+*/
+ //This function cannot be used for an LCD other than the 2*16 type.
+void scrollUp(unsigned char line2)
+{
+ 3f8:	1f 93       	push	r17
+ 3fa:	cf 93       	push	r28
+ 3fc:	08 2f       	mov	r16, r24
+ 3fe:	10 e0       	ldi	r17, 0x00	; 0
+ 400:	04 53       	subi	r16, 0x34	; 52
+ 402:	1f 4f       	sbci	r17, 0xFF	; 255
+	unsigned char i;
+	for(i=0;i<=15;i++){
+ 404:	c0 e0       	ldi	r28, 0x00	; 0
+		lcd_gotoxy(i+1,1);
+ 406:	cf 5f       	subi	r28, 0xFF	; 255
+ 408:	61 e0       	ldi	r22, 0x01	; 1
+ 40a:	8c 2f       	mov	r24, r28
+ 40c:	ba de       	rcall	.-652    	; 0x182 <lcd_gotoxy>
+		lcdData(storage[i][line2-2]);
+ 40e:	f8 01       	movw	r30, r16
+ 410:	80 81       	ld	r24, Z
+ 412:	7f de       	rcall	.-770    	; 0x112 <lcdData>
+		lcd_gotoxy(i+1,2);
+ 414:	62 e0       	ldi	r22, 0x02	; 2
+ 416:	8c 2f       	mov	r24, r28
+ 418:	b4 de       	rcall	.-664    	; 0x182 <lcd_gotoxy>
+		lcdData(storage[i][line2-1]);
+ 41a:	f8 01       	movw	r30, r16
+ 41c:	81 81       	ldd	r24, Z+1	; 0x01
+ 41e:	79 de       	rcall	.-782    	; 0x112 <lcdData>
+ 420:	0b 5f       	subi	r16, 0xFB	; 251
+ 422:	1f 4f       	sbci	r17, 0xFF	; 255
+ 424:	c0 31       	cpi	r28, 0x10	; 16
+*/
+ //This function cannot be used for an LCD other than the 2*16 type.
+void scrollUp(unsigned char line2)
+{
+	unsigned char i;
+	for(i=0;i<=15;i++){
+ 426:	79 f7       	brne	.-34     	; 0x406 <__LOCK_REGION_LENGTH__+0x6>
+		lcd_gotoxy(i+1,1);
+		lcdData(storage[i][line2-2]);
+		lcd_gotoxy(i+1,2);
+		lcdData(storage[i][line2-1]);
+	} lcd_gotoxy(16,2);
+ 428:	62 e0       	ldi	r22, 0x02	; 2
+ 42a:	80 e1       	ldi	r24, 0x10	; 16
+ 42c:	aa de       	rcall	.-684    	; 0x182 <lcd_gotoxy>
+ 42e:	cf 91       	pop	r28
+}
+ 430:	1f 91       	pop	r17
+ 432:	0f 91       	pop	r16
+ 434:	08 95       	ret
+
+00000436 <moveCursor>:
+ 436:	80 91 cb 00 	lds	r24, 0x00CB	; 0x8000cb <j>
+
+//A function used for moving the cursor according to the value of j, and scrolls down if needed.
+void moveCursor(void)
+{
+	
+	if((j==33 || j==49 || j==65) && (B2==0)) {line++;scrollDown(line);}
+ 43a:	98 2f       	mov	r25, r24
+ 43c:	9f 7e       	andi	r25, 0xEF	; 239
+ 43e:	91 32       	cpi	r25, 0x21	; 33
+ 440:	09 f4       	brne	.+2      	; 0x444 <moveCursor+0xe>
+ 442:	3f c0       	rjmp	.+126    	; 0x4c2 <moveCursor+0x8c>
+ 444:	81 34       	cpi	r24, 0x41	; 65
+ 446:	41 f4       	brne	.+16     	; 0x458 <moveCursor+0x22>
+ 448:	41 c0       	rjmp	.+130    	; 0x4cc <moveCursor+0x96>
+ 44a:	80 91 ca 00 	lds	r24, 0x00CA	; 0x8000ca <line>
+ 44e:	8f 5f       	subi	r24, 0xFF	; 255
+ 450:	80 93 ca 00 	sts	0x00CA, r24	; 0x8000ca <line>
+ 454:	91 cf       	rjmp	.-222    	; 0x378 <scrollDown>
+ 456:	08 95       	ret
+	else if(j>70) {lcd_gotoxy(70-64,2);line=5;}
+ 458:	87 34       	cpi	r24, 0x47	; 71
+ 45a:	38 f0       	brcs	.+14     	; 0x46a <moveCursor+0x34>
+ 45c:	62 e0       	ldi	r22, 0x02	; 2
+ 45e:	86 e0       	ldi	r24, 0x06	; 6
+ 460:	90 de       	rcall	.-736    	; 0x182 <lcd_gotoxy>
+ 462:	85 e0       	ldi	r24, 0x05	; 5
+ 464:	80 93 ca 00 	sts	0x00CA, r24	; 0x8000ca <line>
+ 468:	08 95       	ret
+	else if(j>64 && j<=70) {lcd_gotoxy(j-64,2);line=5;}
+ 46a:	9f eb       	ldi	r25, 0xBF	; 191
+ 46c:	98 0f       	add	r25, r24
+ 46e:	96 30       	cpi	r25, 0x06	; 6
+ 470:	38 f4       	brcc	.+14     	; 0x480 <moveCursor+0x4a>
+ 472:	62 e0       	ldi	r22, 0x02	; 2
+ 474:	80 54       	subi	r24, 0x40	; 64
+ 476:	85 de       	rcall	.-758    	; 0x182 <lcd_gotoxy>
+ 478:	85 e0       	ldi	r24, 0x05	; 5
+ 47a:	80 93 ca 00 	sts	0x00CA, r24	; 0x8000ca <line>
+ 47e:	08 95       	ret
+	else if(j>48) {lcd_gotoxy(j-48,2);line=4;}
+ 480:	81 33       	cpi	r24, 0x31	; 49
+ 482:	38 f0       	brcs	.+14     	; 0x492 <moveCursor+0x5c>
+ 484:	62 e0       	ldi	r22, 0x02	; 2
+ 486:	80 53       	subi	r24, 0x30	; 48
+ 488:	7c de       	rcall	.-776    	; 0x182 <lcd_gotoxy>
+ 48a:	84 e0       	ldi	r24, 0x04	; 4
+ 48c:	80 93 ca 00 	sts	0x00CA, r24	; 0x8000ca <line>
+ 490:	08 95       	ret
+	else if(j>32) {lcd_gotoxy(j-32,2);line=3;}
+ 492:	81 32       	cpi	r24, 0x21	; 33
+ 494:	38 f0       	brcs	.+14     	; 0x4a4 <moveCursor+0x6e>
+ 496:	62 e0       	ldi	r22, 0x02	; 2
+ 498:	80 52       	subi	r24, 0x20	; 32
+ 49a:	73 de       	rcall	.-794    	; 0x182 <lcd_gotoxy>
+ 49c:	83 e0       	ldi	r24, 0x03	; 3
+ 49e:	80 93 ca 00 	sts	0x00CA, r24	; 0x8000ca <line>
+	else if(j>16) {lcd_gotoxy(j-16,2);line=2;}
+ 4a2:	08 95       	ret
+ 4a4:	81 31       	cpi	r24, 0x11	; 17
+ 4a6:	38 f0       	brcs	.+14     	; 0x4b6 <moveCursor+0x80>
+ 4a8:	62 e0       	ldi	r22, 0x02	; 2
+ 4aa:	80 51       	subi	r24, 0x10	; 16
+ 4ac:	6a de       	rcall	.-812    	; 0x182 <lcd_gotoxy>
+ 4ae:	82 e0       	ldi	r24, 0x02	; 2
+ 4b0:	80 93 ca 00 	sts	0x00CA, r24	; 0x8000ca <line>
+	else {lcd_gotoxy(j,1);line=1;}
+ 4b4:	08 95       	ret
+ 4b6:	61 e0       	ldi	r22, 0x01	; 1
+ 4b8:	64 de       	rcall	.-824    	; 0x182 <lcd_gotoxy>
+ 4ba:	81 e0       	ldi	r24, 0x01	; 1
+ 4bc:	80 93 ca 00 	sts	0x00CA, r24	; 0x8000ca <line>
+}
+ 4c0:	08 95       	ret
+
+//A function used for moving the cursor according to the value of j, and scrolls down if needed.
+void moveCursor(void)
+{
+	
+	if((j==33 || j==49 || j==65) && (B2==0)) {line++;scrollDown(line);}
+ 4c2:	90 91 cc 00 	lds	r25, 0x00CC	; 0x8000cc <__data_end>
+ 4c6:	91 11       	cpse	r25, r1
+ 4c8:	d0 cf       	rjmp	.-96     	; 0x46a <moveCursor+0x34>
+ 4ca:	bf cf       	rjmp	.-130    	; 0x44a <moveCursor+0x14>
+ 4cc:	90 91 cc 00 	lds	r25, 0x00CC	; 0x8000cc <__data_end>
+ 4d0:	91 11       	cpse	r25, r1
+ 4d2:	cf cf       	rjmp	.-98     	; 0x472 <moveCursor+0x3c>
+ 4d4:	ba cf       	rjmp	.-140    	; 0x44a <moveCursor+0x14>
+
+000004d6 <backSpace>:
+}
+
+//A function for performing the backspace functionality, it deletes the most recently entered character and might scroll up if needed.
+void backSpace(void)
+{
+		B2 = 1;
+ 4d6:	81 e0       	ldi	r24, 0x01	; 1
+ 4d8:	80 93 cc 00 	sts	0x00CC, r24	; 0x8000cc <__data_end>
+		
+		saveChar(0);
+ 4dc:	80 e0       	ldi	r24, 0x00	; 0
+ 4de:	f7 de       	rcall	.-530    	; 0x2ce <saveChar>
+		if(j==33 || j==49 || j==65) {scrollUp(line);}
+ 4e0:	80 91 cb 00 	lds	r24, 0x00CB	; 0x8000cb <j>
+ 4e4:	98 2f       	mov	r25, r24
+ 4e6:	9f 7e       	andi	r25, 0xEF	; 239
+ 4e8:	91 32       	cpi	r25, 0x21	; 33
+ 4ea:	11 f0       	breq	.+4      	; 0x4f0 <backSpace+0x1a>
+ 4ec:	81 34       	cpi	r24, 0x41	; 65
+ 4ee:	19 f4       	brne	.+6      	; 0x4f6 <backSpace+0x20>
+ 4f0:	80 91 ca 00 	lds	r24, 0x00CA	; 0x8000ca <line>
+ 4f4:	80 df       	rcall	.-256    	; 0x3f6 <scrollUp>
+		if(j>1){j--;}
+ 4f6:	80 91 cb 00 	lds	r24, 0x00CB	; 0x8000cb <j>
+ 4fa:	82 30       	cpi	r24, 0x02	; 2
+ 4fc:	18 f0       	brcs	.+6      	; 0x504 <backSpace+0x2e>
+ 4fe:	81 50       	subi	r24, 0x01	; 1
+ 500:	80 93 cb 00 	sts	0x00CB, r24	; 0x8000cb <j>
+		moveCursor();
+		lcdData(0);
+ 504:	98 df       	rcall	.-208    	; 0x436 <moveCursor>
+ 506:	80 e0       	ldi	r24, 0x00	; 0
+ 508:	04 de       	rcall	.-1016   	; 0x112 <lcdData>
+		moveCursor();
+ 50a:	95 df       	rcall	.-214    	; 0x436 <moveCursor>
+ 50c:	10 92 cc 00 	sts	0x00CC, r1	; 0x8000cc <__data_end>
+		
+		B2 = 0;	
+ 510:	08 95       	ret
+
+00000512 <userScrollDown>:
+ 512:	cf 93       	push	r28
+	} if(line>2){scrollUp(line+1);moveCursor();}
+}
+
+//A function for handling the press of the scroll down by the user, it determines whether or not the user is allowed to scroll down (are there any lines below?), and it returns to the current cursor position in the case the user pressed any key other than the scroll up/down keys.
+void userScrollDown(unsigned char l)
+{
+ 514:	c8 2f       	mov	r28, r24
+	if(l>2 && l<5 && l<line){
+ 516:	8d ef       	ldi	r24, 0xFD	; 253
+ 518:	8c 0f       	add	r24, r28
+ 51a:	82 30       	cpi	r24, 0x02	; 2
+ 51c:	90 f4       	brcc	.+36     	; 0x542 <userScrollDown+0x30>
+ 51e:	80 91 ca 00 	lds	r24, 0x00CA	; 0x8000ca <line>
+ 522:	c8 17       	cp	r28, r24
+ 524:	70 f4       	brcc	.+28     	; 0x542 <userScrollDown+0x30>
+		unsigned char ch3;
+		scrollDown2(l);
+ 526:	8c 2f       	mov	r24, r28
+ 528:	46 df       	rcall	.-372    	; 0x3b6 <scrollDown2>
+		ch3 = getKey();
+ 52a:	4c de       	rcall	.-872    	; 0x1c4 <getKey>
+ 52c:	8b 32       	cpi	r24, 0x2B	; 43
+		if(ch3 == '+' && l>2 && l<5) userScrollDown(l+1);
+ 52e:	21 f4       	brne	.+8      	; 0x538 <userScrollDown+0x26>
+ 530:	81 e0       	ldi	r24, 0x01	; 1
+ 532:	8c 0f       	add	r24, r28
+ 534:	ee df       	rcall	.-36     	; 0x512 <userScrollDown>
+ 536:	05 c0       	rjmp	.+10     	; 0x542 <userScrollDown+0x30>
+ 538:	8d 32       	cpi	r24, 0x2D	; 45
+		else if(ch3 == '-' && l>2 && l<5) userScrollUp(l-1);
+ 53a:	19 f4       	brne	.+6      	; 0x542 <userScrollDown+0x30>
+ 53c:	8f ef       	ldi	r24, 0xFF	; 255
+ 53e:	8c 0f       	add	r24, r28
+ 540:	09 d0       	rcall	.+18     	; 0x554 <userScrollUp>
+ 542:	80 91 ca 00 	lds	r24, 0x00CA	; 0x8000ca <line>
+	} if(line>2){scrollUp(line+1);moveCursor();}
+ 546:	83 30       	cpi	r24, 0x03	; 3
+ 548:	18 f0       	brcs	.+6      	; 0x550 <userScrollDown+0x3e>
+ 54a:	8f 5f       	subi	r24, 0xFF	; 255
+ 54c:	54 df       	rcall	.-344    	; 0x3f6 <scrollUp>
+ 54e:	73 df       	rcall	.-282    	; 0x436 <moveCursor>
+ 550:	cf 91       	pop	r28
+}
+ 552:	08 95       	ret
+
+00000554 <userScrollUp>:
+ 554:	cf 93       	push	r28
+
+void userScrollDown(unsigned char l);
+
+//A function for handling the press of the scroll button by the user, it determines whether or not the user is allowed to scroll up (are there any lines above?), and it returns to the current cursor position in the case the user pressed any key other than the scroll up/down keys.
+void userScrollUp(unsigned char l)
+{
+ 556:	c8 2f       	mov	r28, r24
+	if(l>2){
+ 558:	83 30       	cpi	r24, 0x03	; 3
+ 55a:	50 f0       	brcs	.+20     	; 0x570 <userScrollUp+0x1c>
+		unsigned char ch3;
+		scrollUp(l);
+ 55c:	4c df       	rcall	.-360    	; 0x3f6 <scrollUp>
+		ch3 = getKey();
+ 55e:	32 de       	rcall	.-924    	; 0x1c4 <getKey>
+ 560:	8d 32       	cpi	r24, 0x2D	; 45
+		if(ch3 == '-' && l>2) userScrollUp(l-1);
+ 562:	71 f4       	brne	.+28     	; 0x580 <userScrollUp+0x2c>
+ 564:	8f ef       	ldi	r24, 0xFF	; 255
+ 566:	8c 0f       	add	r24, r28
+ 568:	f5 df       	rcall	.-22     	; 0x554 <userScrollUp>
+ 56a:	02 c0       	rjmp	.+4      	; 0x570 <userScrollUp+0x1c>
+		else if(ch3 == '+' && l>2) userScrollDown(l);
+ 56c:	8c 2f       	mov	r24, r28
+ 56e:	d1 df       	rcall	.-94     	; 0x512 <userScrollDown>
+ 570:	80 91 ca 00 	lds	r24, 0x00CA	; 0x8000ca <line>
+	} if(line>2){scrollUp(line+1);moveCursor();}
+ 574:	83 30       	cpi	r24, 0x03	; 3
+ 576:	38 f0       	brcs	.+14     	; 0x586 <userScrollUp+0x32>
+ 578:	8f 5f       	subi	r24, 0xFF	; 255
+ 57a:	3d df       	rcall	.-390    	; 0x3f6 <scrollUp>
+ 57c:	5c df       	rcall	.-328    	; 0x436 <moveCursor>
+ 57e:	03 c0       	rjmp	.+6      	; 0x586 <userScrollUp+0x32>
+}
+ 580:	8b 32       	cpi	r24, 0x2B	; 43
+	if(l>2){
+		unsigned char ch3;
+		scrollUp(l);
+		ch3 = getKey();
+		if(ch3 == '-' && l>2) userScrollUp(l-1);
+		else if(ch3 == '+' && l>2) userScrollDown(l);
+ 582:	b1 f7       	brne	.-20     	; 0x570 <userScrollUp+0x1c>
+ 584:	f3 cf       	rjmp	.-26     	; 0x56c <userScrollUp+0x18>
+ 586:	cf 91       	pop	r28
+	} if(line>2){scrollUp(line+1);moveCursor();}
+}
+ 588:	08 95       	ret
+
+0000058a <clearScreen>:
+ 58a:	cf 93       	push	r28
+}
+
+//A function for clearing the LCD display and restaring the cursor and the line pointer positions.
+void clearScreen(void){
+	
+	lcdCommand(0x1);
+ 58c:	81 e0       	ldi	r24, 0x01	; 1
+ 58e:	9c dd       	rcall	.-1224   	; 0xc8 <lcdCommand>
+	delay_us(2000);
+ 590:	80 ed       	ldi	r24, 0xD0	; 208
+ 592:	97 e0       	ldi	r25, 0x07	; 7
+ 594:	7c dd       	rcall	.-1288   	; 0x8e <delay_us>
+	
+	for(unsigned char i; i<=16; i++){
+ 596:	20 e0       	ldi	r18, 0x00	; 0
+ 598:	15 c0       	rjmp	.+42     	; 0x5c4 <clearScreen+0x3a>
+		for(unsigned char k; k<=5; k++){
+			storage[i][k]=0;
+ 59a:	82 2f       	mov	r24, r18
+ 59c:	90 e0       	ldi	r25, 0x00	; 0
+ 59e:	ac 01       	movw	r20, r24
+ 5a0:	44 0f       	add	r20, r20
+ 5a2:	55 1f       	adc	r21, r21
+ 5a4:	44 0f       	add	r20, r20
+ 5a6:	55 1f       	adc	r21, r21
+ 5a8:	84 0f       	add	r24, r20
+ 5aa:	95 1f       	adc	r25, r21
+ 5ac:	82 53       	subi	r24, 0x32	; 50
+ 5ae:	9f 4f       	sbci	r25, 0xFF	; 255
+ 5b0:	fc 01       	movw	r30, r24
+ 5b2:	ec 0f       	add	r30, r28
+ 5b4:	f1 1d       	adc	r31, r1
+ 5b6:	10 82       	st	Z, r1
+	
+	lcdCommand(0x1);
+	delay_us(2000);
+	
+	for(unsigned char i; i<=16; i++){
+		for(unsigned char k; k<=5; k++){
+ 5b8:	cf 5f       	subi	r28, 0xFF	; 255
+ 5ba:	c6 30       	cpi	r28, 0x06	; 6
+ 5bc:	c9 f7       	brne	.-14     	; 0x5b0 <clearScreen+0x26>
+void clearScreen(void){
+	
+	lcdCommand(0x1);
+	delay_us(2000);
+	
+	for(unsigned char i; i<=16; i++){
+ 5be:	2f 5f       	subi	r18, 0xFF	; 255
+ 5c0:	21 31       	cpi	r18, 0x11	; 17
+ 5c2:	19 f0       	breq	.+6      	; 0x5ca <clearScreen+0x40>
+		for(unsigned char k; k<=5; k++){
+ 5c4:	c6 30       	cpi	r28, 0x06	; 6
+ 5c6:	48 f3       	brcs	.-46     	; 0x59a <clearScreen+0x10>
+ 5c8:	fa cf       	rjmp	.-12     	; 0x5be <clearScreen+0x34>
+			storage[i][k]=0;
+		}
+	}
+	
+	j=1;
+ 5ca:	81 e0       	ldi	r24, 0x01	; 1
+ 5cc:	80 93 cb 00 	sts	0x00CB, r24	; 0x8000cb <j>
+	line=1;
+ 5d0:	80 93 ca 00 	sts	0x00CA, r24	; 0x8000ca <line>
+	moveCursor();
+ 5d4:	30 df       	rcall	.-416    	; 0x436 <moveCursor>
+}
+ 5d6:	cf 91       	pop	r28
+ 5d8:	08 95       	ret
+
+000005da <loopKey>:
+
+//A function for handling the pressing of one of the multivalued keys, it determines what value will be the final result of the several presses.
+void loopKey(unsigned char ch)
+{
+ 5da:	ef 92       	push	r14
+ 5dc:	ff 92       	push	r15
+ 5de:	0f 93       	push	r16
+ 5e0:	1f 93       	push	r17
+ 5e2:	cf 93       	push	r28
+ 5e4:	df 93       	push	r29
+ 5e6:	d8 2f       	mov	r29, r24
+	unsigned char k = 1;
+	unsigned char x = ch - '0';
+	moveCursor();
+ 5e8:	26 df       	rcall	.-436    	; 0x436 <moveCursor>
+	lcdData(allKeys[x][1]);
+ 5ea:	80 ed       	ldi	r24, 0xD0	; 208
+ 5ec:	8d 0f       	add	r24, r29
+ 5ee:	e8 2e       	mov	r14, r24
+ 5f0:	f1 2c       	mov	r15, r1
+ 5f2:	87 01       	movw	r16, r14
+ 5f4:	00 0f       	add	r16, r16
+ 5f6:	11 1f       	adc	r17, r17
+ 5f8:	00 0f       	add	r16, r16
+ 5fa:	11 1f       	adc	r17, r17
+ 5fc:	00 0f       	add	r16, r16
+ 5fe:	11 1f       	adc	r17, r17
+ 600:	0e 0d       	add	r16, r14
+ 602:	1f 1d       	adc	r17, r15
+ 604:	00 5a       	subi	r16, 0xA0	; 160
+ 606:	1f 4f       	sbci	r17, 0xFF	; 255
+ 608:	f8 01       	movw	r30, r16
+ 60a:	81 81       	ldd	r24, Z+1	; 0x01
+ 60c:	82 dd       	rcall	.-1276   	; 0x112 <lcdData>
+	saveChar(allKeys[x][1]);
+ 60e:	f8 01       	movw	r30, r16
+ 610:	81 81       	ldd	r24, Z+1	; 0x01
+ 612:	5d de       	rcall	.-838    	; 0x2ce <saveChar>
+		restartTimer();
+		ch2 = getKey();
+		if(	B1 ==0 && ch2 == ch){
+			k++;
+			if(k>=9) k=0;
+			else if(allKeys[x][k] == '/')k=0;
+ 614:	c1 e0       	ldi	r28, 0x01	; 1
+	moveCursor();
+	lcdData(allKeys[x][1]);
+	saveChar(allKeys[x][1]);
+	unsigned char ch2;
+	while(1){
+		restartTimer();
+ 616:	78 01       	movw	r14, r16
+ 618:	50 de       	rcall	.-864    	; 0x2ba <restartTimer>
+		ch2 = getKey();
+ 61a:	d4 dd       	rcall	.-1112   	; 0x1c4 <getKey>
+ 61c:	90 91 cd 00 	lds	r25, 0x00CD	; 0x8000cd <B1>
+		if(	B1 ==0 && ch2 == ch){
+ 620:	91 11       	cpse	r25, r1
+ 622:	19 c0       	rjmp	.+50     	; 0x656 <loopKey+0x7c>
+ 624:	d8 13       	cpse	r29, r24
+ 626:	23 c0       	rjmp	.+70     	; 0x66e <loopKey+0x94>
+ 628:	cf 5f       	subi	r28, 0xFF	; 255
+			k++;
+ 62a:	c9 30       	cpi	r28, 0x09	; 9
+			if(k>=9) k=0;
+ 62c:	40 f4       	brcc	.+16     	; 0x63e <loopKey+0x64>
+ 62e:	f7 01       	movw	r30, r14
+			else if(allKeys[x][k] == '/')k=0;
+ 630:	ec 0f       	add	r30, r28
+ 632:	f1 1d       	adc	r31, r1
+ 634:	80 81       	ld	r24, Z
+ 636:	8f 32       	cpi	r24, 0x2F	; 47
+ 638:	19 f4       	brne	.+6      	; 0x640 <loopKey+0x66>
+ 63a:	c0 e0       	ldi	r28, 0x00	; 0
+ 63c:	01 c0       	rjmp	.+2      	; 0x640 <loopKey+0x66>
+	while(1){
+		restartTimer();
+		ch2 = getKey();
+		if(	B1 ==0 && ch2 == ch){
+			k++;
+			if(k>=9) k=0;
+ 63e:	c0 e0       	ldi	r28, 0x00	; 0
+			else if(allKeys[x][k] == '/')k=0;
+			moveCursor();
+ 640:	fa de       	rcall	.-524    	; 0x436 <moveCursor>
+			lcdData(allKeys[x][k]);
+ 642:	87 01       	movw	r16, r14
+ 644:	0c 0f       	add	r16, r28
+ 646:	11 1d       	adc	r17, r1
+ 648:	f8 01       	movw	r30, r16
+ 64a:	80 81       	ld	r24, Z
+ 64c:	62 dd       	rcall	.-1340   	; 0x112 <lcdData>
+			saveChar(allKeys[x][k]);
+ 64e:	f8 01       	movw	r30, r16
+ 650:	80 81       	ld	r24, Z
+ 652:	3d de       	rcall	.-902    	; 0x2ce <saveChar>
+ 654:	e1 cf       	rjmp	.-62     	; 0x618 <loopKey+0x3e>
+					clearScreen();
+					break;
+				}
+			break;
+		}
+	}
+ 656:	91 30       	cpi	r25, 0x01	; 1
+			else if(allKeys[x][k] == '/')k=0;
+			moveCursor();
+			lcdData(allKeys[x][k]);
+			saveChar(allKeys[x][k]);
+		}
+		else if( B1 == 1 && ch2 == ch){
+ 658:	51 f4       	brne	.+20     	; 0x66e <loopKey+0x94>
+ 65a:	d8 13       	cpse	r29, r24
+ 65c:	08 c0       	rjmp	.+16     	; 0x66e <loopKey+0x94>
+			j++;
+ 65e:	80 91 cb 00 	lds	r24, 0x00CB	; 0x8000cb <j>
+ 662:	8f 5f       	subi	r24, 0xFF	; 255
+ 664:	80 93 cb 00 	sts	0x00CB, r24	; 0x8000cb <j>
+			loopKey(ch2);break;
+ 668:	8d 2f       	mov	r24, r29
+ 66a:	b7 df       	rcall	.-146    	; 0x5da <loopKey>
+ 66c:	38 c0       	rjmp	.+112    	; 0x6de <loopKey+0x104>
+ 66e:	90 91 cb 00 	lds	r25, 0x00CB	; 0x8000cb <j>
+			}
+		else 
+			{
+				j++;
+ 672:	9f 5f       	subi	r25, 0xFF	; 255
+ 674:	90 93 cb 00 	sts	0x00CB, r25	; 0x8000cb <j>
+				if(ch2 >= '0' && ch2 <= '9') {
+ 678:	90 ed       	ldi	r25, 0xD0	; 208
+ 67a:	98 0f       	add	r25, r24
+ 67c:	9a 30       	cpi	r25, 0x0A	; 10
+					loopKey(ch2);
+ 67e:	10 f4       	brcc	.+4      	; 0x684 <loopKey+0xaa>
+ 680:	ac df       	rcall	.-168    	; 0x5da <loopKey>
+ 682:	2d c0       	rjmp	.+90     	; 0x6de <loopKey+0x104>
+				}
+				else if(ch2 == 'N'){
+ 684:	8e 34       	cpi	r24, 0x4E	; 78
+ 686:	59 f4       	brne	.+22     	; 0x69e <loopKey+0xc4>
+					moveCursor();
+ 688:	d6 de       	rcall	.-596    	; 0x436 <moveCursor>
+ 68a:	8a e2       	ldi	r24, 0x2A	; 42
+					lcdData('*');
+ 68c:	42 dd       	rcall	.-1404   	; 0x112 <lcdData>
+ 68e:	8a e2       	ldi	r24, 0x2A	; 42
+					saveChar('*');
+ 690:	1e de       	rcall	.-964    	; 0x2ce <saveChar>
+ 692:	80 91 cb 00 	lds	r24, 0x00CB	; 0x8000cb <j>
+					j++;
+ 696:	8f 5f       	subi	r24, 0xFF	; 255
+ 698:	80 93 cb 00 	sts	0x00CB, r24	; 0x8000cb <j>
+ 69c:	20 c0       	rjmp	.+64     	; 0x6de <loopKey+0x104>
+ 69e:	8d 33       	cpi	r24, 0x3D	; 61
+				}
+				else if(ch2 == '='){
+ 6a0:	59 f4       	brne	.+22     	; 0x6b8 <loopKey+0xde>
+ 6a2:	c9 de       	rcall	.-622    	; 0x436 <moveCursor>
+					moveCursor();
+ 6a4:	83 e2       	ldi	r24, 0x23	; 35
+					lcdData('#');
+ 6a6:	35 dd       	rcall	.-1430   	; 0x112 <lcdData>
+ 6a8:	83 e2       	ldi	r24, 0x23	; 35
+ 6aa:	11 de       	rcall	.-990    	; 0x2ce <saveChar>
+					saveChar('#');
+ 6ac:	80 91 cb 00 	lds	r24, 0x00CB	; 0x8000cb <j>
+					j++;
+ 6b0:	8f 5f       	subi	r24, 0xFF	; 255
+ 6b2:	80 93 cb 00 	sts	0x00CB, r24	; 0x8000cb <j>
+ 6b6:	13 c0       	rjmp	.+38     	; 0x6de <loopKey+0x104>
+ 6b8:	8f 32       	cpi	r24, 0x2F	; 47
+				}
+				else if(ch2 == '/'){
+ 6ba:	11 f4       	brne	.+4      	; 0x6c0 <loopKey+0xe6>
+ 6bc:	0c df       	rcall	.-488    	; 0x4d6 <backSpace>
+					backSpace();
+ 6be:	0f c0       	rjmp	.+30     	; 0x6de <loopKey+0x104>
+ 6c0:	8b 32       	cpi	r24, 0x2B	; 43
+				}
+				else if(ch2 == '+'){
+ 6c2:	21 f4       	brne	.+8      	; 0x6cc <loopKey+0xf2>
+ 6c4:	80 91 ca 00 	lds	r24, 0x00CA	; 0x8000ca <line>
+					userScrollDown(line);
+ 6c8:	24 df       	rcall	.-440    	; 0x512 <userScrollDown>
+ 6ca:	09 c0       	rjmp	.+18     	; 0x6de <loopKey+0x104>
+ 6cc:	8d 32       	cpi	r24, 0x2D	; 45
+					break;
+ 6ce:	21 f4       	brne	.+8      	; 0x6d8 <loopKey+0xfe>
+				}
+				else if(ch2 == '-'){
+ 6d0:	80 91 ca 00 	lds	r24, 0x00CA	; 0x8000ca <line>
+					userScrollUp(line);
+ 6d4:	3f df       	rcall	.-386    	; 0x554 <userScrollUp>
+ 6d6:	03 c0       	rjmp	.+6      	; 0x6de <loopKey+0x104>
+ 6d8:	88 35       	cpi	r24, 0x58	; 88
+ 6da:	09 f4       	brne	.+2      	; 0x6de <loopKey+0x104>
+					break;
+ 6dc:	56 df       	rcall	.-340    	; 0x58a <clearScreen>
+				}
+				else if(ch2 == 'X'){
+ 6de:	df 91       	pop	r29
+ 6e0:	cf 91       	pop	r28
+					clearScreen();
+ 6e2:	1f 91       	pop	r17
+ 6e4:	0f 91       	pop	r16
+					break;
+				}
+			break;
+		}
+	}
+}
+ 6e6:	ff 90       	pop	r15
+ 6e8:	ef 90       	pop	r14
+ 6ea:	08 95       	ret
+
+000006ec <main>:
+ 6ec:	cf dc       	rcall	.-1634   	; 0x8c <board_init>
+ 6ee:	33 dd       	rcall	.-1434   	; 0x156 <lcd_init>
+ 6f0:	64 dd       	rcall	.-1336   	; 0x1ba <keypad_init>
+ 6f2:	a1 de       	rcall	.-702    	; 0x436 <moveCursor>
+	
+	lcd_init();
+	
+	keypad_init();
+	
+	moveCursor();
+ 6f4:	84 e0       	ldi	r24, 0x04	; 4
+	
+	unsigned char c;
+	unsigned char c2;
+	unsigned char x = 0;
+
+	TIMSK = (1<<TOV1);
+ 6f6:	89 bf       	out	0x39, r24	; 57
+ 6f8:	78 94       	sei
+	sei();
+ 6fa:	64 dd       	rcall	.-1336   	; 0x1c4 <getKey>
+	
+	while(1)
+	{
+		c = getKey();
+ 6fc:	90 ed       	ldi	r25, 0xD0	; 208
+		
+		if(c >= '0' && c <= '9') {
+ 6fe:	98 0f       	add	r25, r24
+ 700:	9a 30       	cpi	r25, 0x0A	; 10
+ 702:	10 f4       	brcc	.+4      	; 0x708 <main+0x1c>
+			loopKey(c);
+ 704:	6a df       	rcall	.-300    	; 0x5da <loopKey>
+ 706:	f9 cf       	rjmp	.-14     	; 0x6fa <main+0xe>
+			continue;
+ 708:	8f 32       	cpi	r24, 0x2F	; 47
+		}
+		else if(c=='/'){
+ 70a:	11 f4       	brne	.+4      	; 0x710 <main+0x24>
+			backSpace();
+ 70c:	e4 de       	rcall	.-568    	; 0x4d6 <backSpace>
+ 70e:	f5 cf       	rjmp	.-22     	; 0x6fa <main+0xe>
+			continue;
+ 710:	88 35       	cpi	r24, 0x58	; 88
+		}
+		else if(c == 'X'){
+ 712:	11 f4       	brne	.+4      	; 0x718 <main+0x2c>
+ 714:	3a df       	rcall	.-396    	; 0x58a <clearScreen>
+			clearScreen();
+ 716:	f1 cf       	rjmp	.-30     	; 0x6fa <main+0xe>
+ 718:	8e 34       	cpi	r24, 0x4E	; 78
+			continue;
+ 71a:	71 f0       	breq	.+28     	; 0x738 <main+0x4c>
+		}
+		else if(c == 'N'){
+ 71c:	8d 33       	cpi	r24, 0x3D	; 61
+			c2 = '*';
+		}
+		else if(c == '='){
+ 71e:	71 f0       	breq	.+28     	; 0x73c <main+0x50>
+ 720:	8b 32       	cpi	r24, 0x2B	; 43
+			c2 = '#';
+		}
+		else if(c == '+'){
+ 722:	21 f4       	brne	.+8      	; 0x72c <main+0x40>
+ 724:	80 91 ca 00 	lds	r24, 0x00CA	; 0x8000ca <line>
+			userScrollDown(line);
+ 728:	f4 de       	rcall	.-536    	; 0x512 <userScrollDown>
+ 72a:	e7 cf       	rjmp	.-50     	; 0x6fa <main+0xe>
+			continue;
+ 72c:	8d 32       	cpi	r24, 0x2D	; 45
+		}
+		else if(c == '-'){
+ 72e:	41 f4       	brne	.+16     	; 0x740 <main+0x54>
+ 730:	80 91 ca 00 	lds	r24, 0x00CA	; 0x8000ca <line>
+			userScrollUp(line);
+ 734:	0f df       	rcall	.-482    	; 0x554 <userScrollUp>
+		else if(c == 'X'){
+			clearScreen();
+			continue;
+		}
+		else if(c == 'N'){
+			c2 = '*';
+ 736:	e1 cf       	rjmp	.-62     	; 0x6fa <main+0xe>
+ 738:	ca e2       	ldi	r28, 0x2A	; 42
+		}
+		else if(c == '='){
+			c2 = '#';
+ 73a:	03 c0       	rjmp	.+6      	; 0x742 <main+0x56>
+ 73c:	c3 e2       	ldi	r28, 0x23	; 35
+		else if(c == '-'){
+			userScrollUp(line);
+			continue;
+		}
+		else {
+			c2 = '&';
+ 73e:	01 c0       	rjmp	.+2      	; 0x742 <main+0x56>
+		}
+		moveCursor();
+ 740:	c6 e2       	ldi	r28, 0x26	; 38
+ 742:	79 de       	rcall	.-782    	; 0x436 <moveCursor>
+		lcdData(c2);
+ 744:	8c 2f       	mov	r24, r28
+ 746:	e5 dc       	rcall	.-1590   	; 0x112 <lcdData>
+ 748:	8c 2f       	mov	r24, r28
+		saveChar(c2);
+ 74a:	c1 dd       	rcall	.-1150   	; 0x2ce <saveChar>
+ 74c:	80 91 cb 00 	lds	r24, 0x00CB	; 0x8000cb <j>
+		j++;
+ 750:	8f 5f       	subi	r24, 0xFF	; 255
+ 752:	80 93 cb 00 	sts	0x00CB, r24	; 0x8000cb <j>
+ 756:	d1 cf       	rjmp	.-94     	; 0x6fa <main+0xe>
+
+00000758 <__vector_9>:
+ 758:	1f 92       	push	r1
+ 75a:	0f 92       	push	r0
+/*
+//The interrupt handling routine for if the timer finishes the given period (specified by the TCNT0 registers and is 
+//executed when they overflow to zero), it stops the timer and tells the program that it has finished by setting the value of the global variable B1.
+*/
+ISR (TIMER1_OVF_vect)
+{
+ 75c:	0f b6       	in	r0, 0x3f	; 63
+ 75e:	0f 92       	push	r0
+ 760:	11 24       	eor	r1, r1
+ 762:	8f 93       	push	r24
+	TCCR1A = 0x00;
+ 764:	1f bc       	out	0x2f, r1	; 47
+	TCCR1B = 0x00;
+ 766:	1e bc       	out	0x2e, r1	; 46
+	
+	B1=1;
+ 768:	81 e0       	ldi	r24, 0x01	; 1
+ 76a:	80 93 cd 00 	sts	0x00CD, r24	; 0x8000cd <B1>
+ 76e:	8f 91       	pop	r24
+ 770:	0f 90       	pop	r0
+ 772:	0f be       	out	0x3f, r0	; 63
+ 774:	0f 90       	pop	r0
+ 776:	1f 90       	pop	r1
+ 778:	18 95       	reti
+
+0000077a <_exit>:
+ 77a:	f8 94       	cli
+
+0000077c <__stop_program>:
+ 77c:	ff cf       	rjmp	.-2      	; 0x77c <__stop_program>
