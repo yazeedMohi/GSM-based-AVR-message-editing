@@ -17,7 +17,7 @@ The project is simple message editor using: an AVR ATMega32, a LCD, and a 4x4 ke
 ## Usage:
 - Open the project in Atmel studio, the code is in main.c.
 - Edit the code if needed, then build the project to a .hex file (or you can use the one provided)
-- Open up Protous.
+- Open up the Protous file: "AVR Message editor.pdsprj"
 - Double click on the AVR Microcontroller.
 - Click on the folder icon next to "Program file".
 - Select the .hex file from the atmel project (e.g. Atmel Studio\7.0\GccBoardProject1\GccBoardProject1\Debug\GccBoardProject1.hex)
