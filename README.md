@@ -9,3 +9,19 @@ The project is simple message editor using: an AVR ATMega32, a LCD, and a 4x4 ke
 - The user also has the ability of clearing the whole text or backspacing (deleting the last entered character).
 - The text entered by the user is stored in memory in an array named storage[][], so that the user can send the values of the 
  array as a text message (but the code and the circuit needs to be modified in order for the user to be actually able to send an SMS).
+ 
+ ## Requirements:
+- Atmel Studio 7
+- Protous 8
+
+## Usage:
+- Open the project in Atmel studio, the code is in main.c.
+- Edit the code if needed, then build the project to a .hex file (or you can use the one provided)
+- Open up Protous.
+- Double click on the AVR Microcontroller.
+- Click on the folder icon next to "Program file".
+- Select the .hex file from the atmel project (e.g. Atmel Studio\7.0\GccBoardProject1\GccBoardProject1\Debug\GccBoardProject1.hex)
+- Run the simulation in Protous and press the different keys on the keyboard, see the results on the LCD.
+- The same file can be written into an actual AVR chip, see online tutorials on how to do that.
+
+Please don't hesitate to contact me if you have any questions/ comments regarding the project.
