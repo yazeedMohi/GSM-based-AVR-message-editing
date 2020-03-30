@@ -1,6 +1,6 @@
 # GSM-based-AVR-message-editing
 
-The project is simple message editor using: an AVR ATMega32, a LCD, and a 4x4 keypad.
+The project is a simple message editor using: an AVR ATMega32, a LCD, and a 4x4 keypad.
 - The buttons on the keypad are treated like buttons of an old phone where each button can input several different characters.
 - If one of the number buttons is pressed more than once in a row, the character entered by the button is looped among a set of 
  predefined values.
